@@ -144,13 +144,6 @@ public class DecorativeChimneyCore
 
 //		LanguageRegistry.instance().addStringLocalization("itemGroup.tabChimney", "en_US", "Fireplaces and Chimneys");
 
-		GameRegistry.registerBlock(blockChimneyHollowBricks, ItemBlockChimneyHollow.class, "Hollow Chimney Bricks");
-		GameRegistry.registerBlock(blockLogsOn, "Ignited Logs");
-		GameRegistry.registerBlock(blockLogsOff, "Logs");
-		GameRegistry.registerBlock(blockMantelCorner, "Mantel Corner");
-		GameRegistry.registerBlock(blockMantelCenter, "Mantel Center");
-//		GameRegistry.registerBlock(blockMantelCenterA, ItemBlockMantelCenterA.class, "Mantel Center A");
-		GameRegistry.registerBlock(blockMantelSide, ItemBlockMantelSide.class, "Mantel Side");
 		GameRegistry.registerBlock(blockMantelPlainSide, ItemBlockMantelPlainSide.class, "Mantel Plain Side");
 		GameRegistry.registerBlock(blockMantelFoot, ItemBlockMantelFoot.class, "Mantel Foot");
 		

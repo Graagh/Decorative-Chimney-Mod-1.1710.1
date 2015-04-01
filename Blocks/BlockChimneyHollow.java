@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.DecorativeChimney.DecorativeChimneyCore;
+import com.DecorativeChimney.Items.ItemBlockChimneyHollow;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -34,7 +35,7 @@ public class BlockChimneyHollow extends Block
     	setStepSound(Block.soundTypeStone);
     	setBlockName(name);
     	setCreativeTab(DecorativeChimneyCore.tabChimney);
-		GameRegistry.registerBlock(this, name);
+		GameRegistry.registerBlock(this, ItemBlockChimneyHollow.class, name);
     	icons = new IIcon[maxMeta];
 	}
 

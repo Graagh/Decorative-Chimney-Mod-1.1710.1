@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFlintAndSteel;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -57,8 +58,7 @@ public class BlockLogsOff extends Block implements ITileEntityProvider
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int l, float i, float j, float k)
     {
         ItemStack itemStack = entityPlayer.getCurrentEquippedItem();
-        Item item = entityPlayer.getCurrentEquippedItem().getItem();
-        if(item != null && item == Items.flint_and_steel)
+        if(itemStack != null && (itemStack.getItem() instanceof ItemFlintAndSteel))
         {
             int q = world.getBlockMetadata(x, y, z);
             world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "fire.ignite", 1.0F, this.random.nextFloat() * 0.4F + 0.8F);

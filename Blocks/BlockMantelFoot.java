@@ -3,40 +3,42 @@ package com.DecorativeChimney.Blocks;
 import java.util.List;
 import java.util.Random;
 
-import com.DecorativeChimney.CommonProxy;
 import com.DecorativeChimney.DecorativeChimneyCore;
+import com.DecorativeChimney.Items.ItemBlockMantelFoot;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.Icon;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-
 public class BlockMantelFoot extends Block
 {
-	public BlockMantelFoot(int id)
+	private final String name ="blockMantelFoot";
+	private int maxMeta = 16;
+
+	public BlockMantelFoot()
 	{
-		super(id, Material.rock);
+		super(Material.rock);
 		setHardness(5.0F);
     	setResistance(1.0F);
-    	setStepSound(Block.soundStoneFootstep);
-    	setUnlocalizedName("blockMantelFoot");
+    	setStepSound(Block.soundTypeStone);
+    	setBlockName(name);
     	setCreativeTab(DecorativeChimneyCore.tabChimney);
+		GameRegistry.registerBlock(this, ItemBlockMantelFoot.class, name);
+    	icons = new IIcon[maxMeta];
+    	icons2 = new IIcon[maxMeta];
 	}
 
     @SideOnly(Side.CLIENT)
@@ -49,10 +51,10 @@ public class BlockMantelFoot extends Block
     }
 
     @SideOnly(Side.CLIENT)
-    private static Icon[] icons;
+    private static IIcon[] icons;
 
     @SideOnly(Side.CLIENT)
-    private static Icon[] icons2;
+    private static IIcon[] icons2;
 
     private static final String[] blockMantelFootNames =
 		{ 
@@ -71,11 +73,8 @@ public class BlockMantelFoot extends Block
 		};
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister)
+    public void registerIcons(IIconRegister iconRegister)
     {
-    	icons = new Icon[16];
-    	icons2 = new Icon[16];
-    	
     	for(int i = 0; i < blockMantelFootNames.length; i++)
     	{
     		ItemStack blockMantelFootStack = new ItemStack(DecorativeChimneyCore.blockMantelFoot, 64, i);
@@ -87,7 +86,7 @@ public class BlockMantelFoot extends Block
     }
     
     @SideOnly(Side.CLIENT)
-    public Icon getIcon(int i, int metaData)
+    public IIcon getIcon(int i, int metaData)
     {
     	if(i == 6)
     	{
@@ -101,11 +100,6 @@ public class BlockMantelFoot extends Block
     	return icons[metaData];
     }
     
-    public int idDropped(int metaData, Random random)
-    {
-        return blockID;
-    }
-
     public int damageDropped(int metaData)
     {
     	return metaData;
@@ -133,14 +127,14 @@ public class BlockMantelFoot extends Block
 
 	public boolean canPlaceTorchOnTop(World world, int x, int y, int z)
     {
-        if (world.doesBlockHaveSolidTopSurface(x, y, z))
+        if (world.doesBlockHaveSolidTopSurface(world, x, y, z))
         {
             return true;
         }
         else
         {
-            int id = world.getBlockId(x, y, z);
-            return id == DecorativeChimneyCore.blockMantelFoot.blockID;
+            Block block = world.getBlock(x, y, z);
+            return block == DecorativeChimneyCore.blockMantelFoot;
         }
     }
 

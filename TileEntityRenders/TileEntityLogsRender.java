@@ -22,7 +22,7 @@ public class TileEntityLogsRender extends TileEntitySpecialRenderer
 	
 	public void renderAModelAt(TileEntityLogs tileEntityLogs, double d, double d1, double d2, float f)
 	{
-		int i = tileEntityLogs.worldObj.getBlockMetadata(tileEntityLogs.xCoord, tileEntityLogs.yCoord, tileEntityLogs.zCoord);
+		int i = tileEntityLogs.getWorldObj().getBlockMetadata(tileEntityLogs.xCoord, tileEntityLogs.yCoord, tileEntityLogs.zCoord);
 		int j = 0;
 
 		if (i == 0)
@@ -45,7 +45,7 @@ public class TileEntityLogsRender extends TileEntitySpecialRenderer
 			j = 270;
 		}
 
-		tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/LogModel.png")); //texture
+		new ResourceLocation("decorativechimney:textures/LogModel.png"); //texture
 		GL11.glPushMatrix(); //start
 		GL11.glTranslatef((float)d + 0.5F, (float)d1 + 1.5F, (float)d2 + 0.5F); //size
 		GL11.glRotatef(j, 0.0F, 1.0F, 0.0F); //rotate based on metadata

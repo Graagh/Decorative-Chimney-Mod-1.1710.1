@@ -6,15 +6,18 @@ import java.util.Random;
 import com.DecorativeChimney.DecorativeChimneyCore;
 import com.DecorativeChimney.TileEntities.TileEntityLogs;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -23,7 +26,7 @@ import net.minecraft.world.World;
 
 public class BlockLogsOn extends Block implements ITileEntityProvider
 {
-
+	private final String name ="blockLogsOn";
     private Random random = new Random();
 
 	public BlockLogsOn(Class class1)
@@ -36,7 +39,8 @@ public class BlockLogsOn extends Block implements ITileEntityProvider
     	setResistance(1.0F);
     	setTickRandomly(true);
     	setStepSound(Block.soundTypeWood);
-    	setBlockName("blockLogsOn");
+    	setBlockName(name);
+		GameRegistry.registerBlock(this, name);
 	}
 
     @SideOnly(Side.CLIENT)
@@ -87,7 +91,7 @@ public class BlockLogsOn extends Block implements ITileEntityProvider
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int l, float i, float j, float k)
     {
         ItemStack itemStack = entityPlayer.getCurrentEquippedItem();
-    	if(itemStack == Blocks.dirt)
+    	if(itemStack.getItem() instanceof ItemBucket)
     	{
     		Random random = new Random();
     		world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "random.fizz", 1.0F, random.nextFloat() * 0.4F + 0.8F);

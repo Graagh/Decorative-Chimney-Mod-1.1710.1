@@ -29,9 +29,9 @@ import net.minecraft.world.World;
 
 public class BlockMantelSide extends Block
 {
-	public BlockMantelSide(int id)
+	public BlockMantelSide()
 	{
-		super(id, Material.rock);
+		super(Material.rock);
 		setHardness(5.0F);
     	setResistance(1.0F);
     	setStepSound(Block.soundStoneFootstep);
@@ -139,8 +139,8 @@ public class BlockMantelSide extends Block
         }
         else
         {
-            int id = world.getBlockId(x, y, z);
-            return id == DecorativeChimneyCore.blockMantelSide.blockID;
+            int block = world.getBlockId(x, y, z);
+            return block == DecorativeChimneyCore.blockMantelSide.blockID;
         }
     }
 

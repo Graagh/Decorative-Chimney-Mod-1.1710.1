@@ -31,6 +31,7 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
 {
 	private final String name ="blockMantelCenter";
 	private int maxMeta = 16;
+
 	public BlockMantelCenter(Class class1)
 	{
     	super(Material.rock);
@@ -50,7 +51,7 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
     @SideOnly(Side.CLIENT)
     private static IIcon[] icons2;
 
-    private static final String[] blockMantelCenterNames =
+    private static final String[] blockNames =
 		{ 
     		"BlackMarble", "BlackMarble", "GrayMarble", "GrayMarble",
     		"WhiteMarble", "WhiteMarble", "Brick", "Stone",
@@ -58,7 +59,7 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
     		"OakPlank", "BirchPlank", "SprucePlank", "JunglePlank"
 		};
 
-    private static final String[] blockManteCenterSecondaryNames =
+    private static final String[] blockSecondaryNames =
 		{ 
     		"GrayMarble", "WhiteMarble", "BlackMarble", "WhiteMarble",
     		"BlackMarble", "GrayMarble", "Brick", "Stone",
@@ -69,13 +70,13 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister)
     {
-    	for(int i = 0; i < blockMantelCenterNames.length; i++)
+    	for(int i = 0; i < blockNames.length; i++)
     	{
     		ItemStack blockMantelSideStack = new ItemStack(DecorativeChimneyCore.blockMantelSide, 64, i);
 
-    		icons[i] = iconRegister.registerIcon(DecorativeChimneyCore.modid + ":" + blockMantelCenterNames[blockMantelSideStack.getItemDamage()]);
+    		icons[i] = iconRegister.registerIcon(DecorativeChimneyCore.modid + ":" + blockNames[blockMantelSideStack.getItemDamage()]);
 
-    		icons2[i] = iconRegister.registerIcon(DecorativeChimneyCore.modid + ":" + blockManteCenterSecondaryNames[blockMantelSideStack.getItemDamage()]);
+    		icons2[i] = iconRegister.registerIcon(DecorativeChimneyCore.modid + ":" + blockSecondaryNames[blockMantelSideStack.getItemDamage()]);
     	}
     }
     
@@ -191,8 +192,8 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
         }
         else
         {
-            Block id = world.getBlock(x, y, z);
-            return id == DecorativeChimneyCore.blockMantelCenter;
+            Block block = world.getBlock(x, y, z);
+            return block == DecorativeChimneyCore.blockMantelCenter;
         }
     }
 
@@ -324,9 +325,9 @@ public class BlockMantelCenter extends Block implements ITileEntityProvider
         float par9a = 0.0F;
         float par9b = 0.125F;
 
-        for(int l = 0; l < blockMantelCenterNames.length; l = l + 2)
+        for(int l = 0; l < blockNames.length; l = l + 2)
         {
-        	for(int m = 1; m < blockMantelCenterNames.length; m = m + 2)
+        	for(int m = 1; m < blockNames.length; m = m + 2)
         	{
         		if(iblockAccess.getBlockMetadata(x, y, z) == l || iblockAccess.getBlockMetadata(x, y, z) == m)
         		{

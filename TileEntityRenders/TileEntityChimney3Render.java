@@ -1,7 +1,6 @@
 package com.DecorativeChimney.TileEntityRenders;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.tileentity.TileEntity;
@@ -19,12 +18,6 @@ public class TileEntityChimney3Render extends TileEntitySpecialRenderer
 	
     public static TileEntityChimney3Render chimneyRenderer;
 
-    public void setTileEntityRenderer(TileEntityRenderer tileEntityRenderer)
-    {
-        super.setTileEntityRenderer(tileEntityRenderer);
-        chimneyRenderer = this;
-    }
-
     public void renderAModelAt(TileEntityChimney3 tileEntityChimney3, double d, double d1, double d2, float f)
 	{
         this.renderModelAt((float)d, (float)d1, (float)d2, tileEntityChimney3.getBlockMetadata() & 7, (float)(tileEntityChimney3.getChimneyRotation() * 360) / 4.0F, tileEntityChimney3.getChimneyType());
@@ -36,55 +29,55 @@ public class TileEntityChimney3Render extends TileEntitySpecialRenderer
 		{
 			case 0:
 			default:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3B.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3B.png");
 				break;
 			case 1:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3G.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3G.png");
 				break;
 			case 2:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3W.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3W.png");
 				break;
 			case 3:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3LB.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3LB.png");
 				break;
 			case 4:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3SB.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3SB.png");
 				break;
 			case 5:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3LG.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3LG.png");
 				break;
 			case 6:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3SG.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3SG.png");
 				break;
 			case 7:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3S.png")); // and so on and so on
+				new ResourceLocation("decorativechimney:textures/Chimney3S.png"); // and so on and so on
 				break;
 			case 8:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3CS.png")); // bindTextureByName + the path to your image. for the block that you gave damage number 0
+				new ResourceLocation("decorativechimney:textures/Chimney3CS.png"); // bindTextureByName + the path to your image. for the block that you gave damage number 0
 				break;
 			case 9:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3LW.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3LW.png");
 				break;
 			case 10:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3SW.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3SW.png");
 				break;
 			case 11:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3NBr.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3NBr.png");
 				break;
 			case 12:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3Br.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3Br.png");
 				break;
 			case 13:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3E.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3E.png");
 				break;
 			case 14:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3Go.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3Go.png");
 				break;
 			case 15:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3D.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3D.png");
 				break;
 			case 16:
-				tileEntityRenderer.renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney3SSS.png"));
+				new ResourceLocation("decorativechimney:textures/Chimney3SSS.png");
 				break;
 		}
 		
