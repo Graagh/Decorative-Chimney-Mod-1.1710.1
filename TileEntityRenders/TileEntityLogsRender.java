@@ -45,7 +45,7 @@ public class TileEntityLogsRender extends TileEntitySpecialRenderer
 			j = 270;
 		}
 
-		new ResourceLocation("decorativechimney:textures/LogModel.png"); //texture
+		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/LogModel.png")); //texture
 		GL11.glPushMatrix(); //start
 		GL11.glTranslatef((float)d + 0.5F, (float)d1 + 1.5F, (float)d2 + 0.5F); //size
 		GL11.glRotatef(j, 0.0F, 1.0F, 0.0F); //rotate based on metadata

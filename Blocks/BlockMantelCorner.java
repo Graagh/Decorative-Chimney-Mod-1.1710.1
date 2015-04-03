@@ -270,7 +270,7 @@ public class BlockMantelCorner extends Block implements ITileEntityProvider
         		&& block != DecorativeChimneyCore.blockMantelSide
         		&& block != DecorativeChimneyCore.blockMantelPlainSide
         		&& block != DecorativeChimneyCore.blockMantelFoot
-        		&& block != Blocks.fence_gate ? (block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.gourd : false) : true;
+        		&& block != Blocks.fence_gate ? (block.getMaterial().isOpaque() && block.renderAsNormalBlock() ? block.getMaterial() != Material.gourd : false) : true;
     }
 
     public static boolean renderMantelCorner(Block block, int x, int y, int z, RenderBlocks renderBlocks, IBlockAccess iblockAccess)

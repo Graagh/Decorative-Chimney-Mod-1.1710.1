@@ -37,7 +37,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
-@Mod(modid=DecorativeChimneyCore.modid, name="Decorative Chimneys", version="Beta 1.1710.1", dependencies="required-after:DecorativeMarble")
+@Mod(modid=DecorativeChimneyCore.modid, name="Decorative Chimneys", version="Beta 1.1710.1", dependencies="required-after:decorativemarble")
 
 public class DecorativeChimneyCore
 {
@@ -123,7 +123,7 @@ public class DecorativeChimneyCore
 		};
 
 
-	@SidedProxy(clientSide="DecorativeChimney.ClientProxy", serverSide="DecorativeChimney.CommonProxy")
+	@SidedProxy(clientSide="com.DecorativeChimney.ClientProxy", serverSide="com.DecorativeChimney.CommonProxy")
 	public static CommonProxy proxy;
 
 	@EventHandler
@@ -144,9 +144,6 @@ public class DecorativeChimneyCore
 
 //		LanguageRegistry.instance().addStringLocalization("itemGroup.tabChimney", "en_US", "Fireplaces and Chimneys");
 
-		GameRegistry.registerBlock(blockMantelPlainSide, ItemBlockMantelPlainSide.class, "Mantel Plain Side");
-		GameRegistry.registerBlock(blockMantelFoot, ItemBlockMantelFoot.class, "Mantel Foot");
-		
 		GameRegistry.registerTileEntity(TileEntityLogs.class, "LogsOn");
 		GameRegistry.registerTileEntity(TileEntityLogs.class, "LogsOff");
 		GameRegistry.registerTileEntity(TileEntityChimney1.class, "Chimney1");

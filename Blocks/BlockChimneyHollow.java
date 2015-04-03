@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
@@ -39,12 +40,12 @@ public class BlockChimneyHollow extends Block
     	icons = new IIcon[maxMeta];
 	}
 
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int i, CreativeTabs creativetabs, List list)
+    @SideOnly(Side.CLIENT)
+	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list)
     {
-		for (int j = 0; j < 16; j++)
+		for (int i = 0; i < maxMeta; i++)
 		{
-			list.add(new ItemStack(this, 1, j));
+			list.add(new ItemStack(item, 1, i));
 		}
     }
 

@@ -44,14 +44,15 @@ public class ItemChimney2 extends Item
 		IconArray = new IIcon[maxMeta];
 	}
 
-	public void getSubItems(int metaData, CreativeTabs creativeTabs, List list)
+    @SideOnly(Side.CLIENT)
+	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list)
     {
-        for (int j = 0; j < IconArray.length; ++j)
-        {
-        	list.add(new ItemStack(this, 1, j));
-        }
+		for (int i = 0; i < maxMeta; i++)
+		{
+			list.add(new ItemStack(item, 1, i));
+		}
     }
-	
+
     public int getMetadata(int metaData)
     {
         return metaData;

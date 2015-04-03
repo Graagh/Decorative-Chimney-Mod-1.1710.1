@@ -34,55 +34,55 @@ public class TileEntityChimney1Render extends TileEntitySpecialRenderer
 		{
 			case 0:
 			default:
-				new ResourceLocation("decorativechimney:textures/Chimney1B.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1B.png"));
 				break;
 			case 1:
-				new ResourceLocation("decorativechimney:textures/Chimney1BG.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1BG.png"));
 				break;
 			case 2:
-				new ResourceLocation("decorativechimney:textures/Chimney1BW.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1BW.png"));
 				break;
 			case 3:
-				new ResourceLocation("decorativechimney:textures/Chimney1GB.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1GB.png"));
 				break;
 			case 4:
-				new ResourceLocation("decorativechimney:textures/Chimney1G.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1G.png"));
 				break;
 			case 5:
-				new ResourceLocation("decorativechimney:textures/Chimney1GW.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1GW.png"));
 				break;
 			case 6:
-				new ResourceLocation("decorativechimney:textures/Chimney1WB.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1WB.png"));
 				break;
 			case 7:
-				new ResourceLocation("decorativechimney:textures/Chimney1WG.png"); // and so on and so on
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1WG.png")); // and so on and so on
 				break;
 			case 8:
-				new ResourceLocation("decorativechimney:textures/Chimney1W.png"); // bindTextureByName + the path to your image. for the block that you gave damage number 0
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1W.png")); // bindTextureByName + the path to your image. for the block that you gave damage number 0
 				break;
 			case 9:
-				new ResourceLocation("decorativechimney:textures/Chimney1NBr.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1NBr.png"));
 				break;
 			case 10:
-				new ResourceLocation("decorativechimney:textures/Chimney1Br.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1Br.png"));
 				break;
 			case 11:
-				new ResourceLocation("decorativechimney:textures/Chimney1S.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1S.png"));
 				break;
 			case 12:
-				new ResourceLocation("decorativechimney:textures/Chimney1CS.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1CS.png"));
 				break;
 			case 13:
-				new ResourceLocation("decorativechimney:textures/Chimney1E.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1E.png"));
 				break;
 			case 14:
-				new ResourceLocation("decorativechimney:textures/Chimney1Go.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1Go.png"));
 				break;
 			case 15:
-				new ResourceLocation("decorativechimney:textures/Chimney1D.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1D.png"));
 				break;
 			case 16:
-				new ResourceLocation("decorativechimney:textures/Chimney1SSS.png");
+				Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("decorativechimney:textures/Chimney1SSS.png"));
 				break;
 		}
 		
